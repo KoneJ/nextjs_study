@@ -1,6 +1,18 @@
+import Link from 'next/link';
 
-export default function index() {
+const products = ['shirts', 'pants', 'skirt', 'shoes'];
+
+export default function ProductsPage() {
   return (
-    <div>제품 소개 페이지</div>
+    <>
+      <h1>제품 소개 페이지!</h1>
+      <ul>
+        {products.map((product, index) => (
+        <li key={index}>
+          <Link href={`products/${product}`}>{product}</Link>
+        </li>
+        ))}
+      </ul>
+    </>
   )
 }
